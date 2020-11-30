@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 2.8.12)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(PROJECT_NAME connect_result)
 
-project(takeoff_and_land)
+project(${PROJECT_NAME})
 
 if(NOT MSVC)
     add_definitions("-Wall -Wextra")
@@ -13,12 +12,13 @@ endif()
 
 find_package(MAVSDK REQUIRED)
 
-add_executable(takeoff_and_land
-    takeoff_and_land.cpp
+add_executable(${PROJECT_NAME}
+    ${PROJECT_NAME}.cpp
 )
 
-target_link_libraries(takeoff_and_land
+target_link_libraries(${PROJECT_NAME}
     MAVSDK::mavsdk_telemetry
     MAVSDK::mavsdk_action
     MAVSDK::mavsdk
+    MAVSDK::mavsdk_offboard
 )
