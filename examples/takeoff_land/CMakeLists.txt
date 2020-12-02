@@ -20,5 +20,6 @@ target_link_libraries(${PROJECT_NAME}
     MAVSDK::mavsdk_telemetry
     MAVSDK::mavsdk_action
     MAVSDK::mavsdk
+    MAVSDK::mavsdk_mission
     MAVSDK::mavsdk_offboard
 )
